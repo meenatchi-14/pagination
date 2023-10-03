@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding:0px;
+    text-align: center;
+}
+body {
+    background-color: black;
+    color: white;
+    text-align: center !important;
+    height:100vh;
+    width: 50vw;
+  }
+.page1:hover{
+   background-color:#aae605 !important;
+   color:rgb(10, 13, 2)  !important;
+}
+#description {
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+  }
+  #nav-bar {
+  
+    position: relative;
+   
+  }
+
+
+    
+   
+
