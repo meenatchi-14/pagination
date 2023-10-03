@@ -2,7 +2,6 @@
 const textConent=document.querySelector("p");
 textConent.innerText =
   "Pagination is the method of separating digital content into different pages on a website. Users can navigate between these pages by clicking below Buttons.";
-  
   let content_div=document.querySelector("div");
   let table_div=document.querySelector("div");
   let table_tag=document.querySelector("table");
@@ -112,16 +111,24 @@ let addEvent_1 = document.getElementById("event-btn-1");
     // Next Button
 let addEvent_next = document.getElementById("event-btn-next");
 addEvent_next.addEventListener("click", () => {
-  if (start_value < 100 && start_value >= 0) {
+  if (start_value < 90 && start_value >= 0) {
     start_value = start_value + 10;
     display_contents(start_value);
   } else {
     alert("You are already at the Last page!");
   }
 });
+function clearTableBody() {
+  const tableBody = document.getElementById("tbody");
 
+  // Remove all child elements from the table body
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.firstChild);
+  }
+}
     function display_contents(Number_of_items){
       let Table_body=document.getElementById("t-body");
+      clearTableBody();
       for(let i=Number_of_items;i<Number_of_items+10;i++){
         eventButtonFirst(`${idArr[i]}`, `${nameArr[i]}`,`${emailArr[i]}`);
 
@@ -140,35 +147,12 @@ addEvent_next.addEventListener("click", () => {
     }
     display_contents(start_value);
 }
-
-//appending
-document.body.append(container);
-container.append(maindiv);
-maindiv.append(title, description, content_div, table_div);
-content_div.append(navbar);
-navbar.append(ul_list);
-ul_list.append(
-  list_pre,
-  list_1,
-  list_2,
-  list_3,
-  list_4,
-  list_5,
-  list_6,
-  list_7,
-  list_8,
-  list_9,
-  list_10,
-  list_next,
-);
-
 //----------------------------------------------------------------
 
 table_div.append(table_tag);
 table_tag.append(table_head, table_body);
 table_head.append(table_tr);
 table_body.append(table_tr);
-
 table_tr.append(table_th1, table_th2, table_th3);
 
 
